@@ -192,18 +192,20 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
       <AnimatePresence>
         {open && (
           <div 
-            className="fixed inset-0 z-50 h-screen overflow-y-auto overscroll-contain"
+            className="fixed inset-0 z-50 h-[100dvh] overflow-y-auto overflow-x-hidden overscroll-contain touch-pan-y"
             onWheel={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
           >
             <motion.div
               animate={{ opacity: 1 }}
               className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
               exit={{ opacity: 0 }}
               initial={{ opacity: 0 }}
+              onClick={handleClose}
             />
             <motion.div
               animate={{ opacity: 1 }}
-              className="relative z-60 mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
+              className="relative z-60 mx-4 my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:mx-auto md:p-10 dark:bg-neutral-900"
               exit={{ opacity: 0 }}
               initial={{ opacity: 0 }}
               layoutId={layout ? `card-${card.title}` : undefined}
@@ -211,7 +213,7 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
             >
               <button
                 type="button"
-                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
+                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white z-10"
                 onClick={handleClose}
               >
                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
