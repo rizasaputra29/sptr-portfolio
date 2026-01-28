@@ -142,8 +142,8 @@ export function Hero() {
         className="absolute bottom-0 left-0 w-full h-[40vh] sm:h-[45vh] z-10 overflow-hidden"
       >
         <Image 
-          src="https://images.unsplash.com/photo-1621165706491-70e8be5e8080?q=80&w=3134&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          alt="Modern workspace with laptop displaying code on a clean desk" 
+          src="https://res.cloudinary.com/imagehandlers/image/upload/v1769643275/charlie-dt-lVH3nplcE50-unsplash_aqv6vo.jpg" 
+          alt="Modern Software Engineer Black & White" 
           fill 
           sizes="100vw"
           quality={100}
