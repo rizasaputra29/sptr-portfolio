@@ -17,129 +17,66 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    category: "Fintech",
-    title: "Mobile Banking App",
-    src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop",
-    tags: ["iOS", "SwiftUI", "Security"],
-    overview: "A secure and intuitive mobile banking experience created for millions of users. Built with cutting-edge security protocols and a user-first design approach.",
+    category: "Education",
+    title: "Al Madeena Islamic School",
+    src: "https://res.cloudinary.com/imagehandlers/image/upload/v1769623551/image_4_ur4tyk.png",
+    tags: ["Next.js 15", "React 19", "Tailwind v4", "Prisma"],
+    overview: "A modern, dynamic school portal combining a high-performance public landing page with a robust Admin CMS. Built to manage academic records, news, and galleries in real-time.",
     details: [
       {
-        title: "Secure Authentication",
-        description: "Implemented biometric authentication with Face ID and Touch ID, along with 2FA for enhanced security. All transactions are encrypted end-to-end.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+        title: "Dynamic Content Management",
+        description: "Features a custom-built secure Admin Dashboard allowing staff to easily manage news articles, gallery uploads, staff profiles, and academic achievements without coding.",
+        image: "https://res.cloudinary.com/imagehandlers/image/upload/v1769623999/image_5_s58ndx.png"
       },
       {
-        title: "Real-time Transactions",
-        description: "Users can view their balance updates in real-time, with instant notifications for every transaction. The app processes over 10,000 transactions daily.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+        title: "Bleeding Edge Tech Stack",
+        description: "Powered by Next.js 15 App Router and React 19 Server Components for lightning-fast SEO performance. Styled with the new Tailwind CSS v4 engine.",
+        image: "https://res.cloudinary.com/imagehandlers/image/upload/v1769624002/image_6_ckyawf.png"
       }
     ],
-    githubUrl: "https://github.com",
-    webUrl: "https://example.com"
+    githubUrl: "https://github.com/rizasaputra29/madeena-landing-page",
+    webUrl: "https://almadeenaislamicschool.sch.id"
   },
   {
     category: "SaaS",
-    title: "E-Commerce Dashboard",
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-    tags: ["React", "Next.js", "Analytics"],
-    overview: "Real-time analytics and inventory management for modern e-commerce brands. Helping businesses make data-driven decisions with actionable insights.",
+    title: "School Finance System",
+    src: "https://res.cloudinary.com/imagehandlers/image/upload/v1769624834/cf32c50f-4185-42cc-9e66-d9d994efe5ae.png",
+    tags: ["Next.js 16", "Prisma", "Tailwind v4", "PostgreSQL"],
+    overview: "A comprehensive financial management system tailored for educational institutions. Streamlines tuition billing, expense tracking, and generates automated financial reports.",
     details: [
       {
-        title: "Analytics Dashboard",
-        description: "Comprehensive analytics showing sales trends, customer behavior, and conversion rates. Features include custom date ranges and export capabilities.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+        title: "Smart Billing & Tuition",
+        description: "Automated monthly billing generation for students with real-time payment tracking. Supports various payment categories (SPP, Uniforms, Books) and digital receipt generation.",
+        image: "https://res.cloudinary.com/imagehandlers/image/upload/v1769624886/272bd204-4956-4754-99b3-1efb37ad2a69.png"
       },
       {
-        title: "Inventory Management",
-        description: "Smart inventory tracking with low-stock alerts, automated reordering suggestions, and multi-warehouse support for seamless operations.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+        title: "Financial Analytics",
+        description: "Real-time cashflow visualization using Recharts. Features automated generation of general ledgers, income statements, and exportable reports (PDF/Excel) for administrative auditing.",
+        image: "https://res.cloudinary.com/imagehandlers/image/upload/v1769624902/b2b54f50-659a-4f0b-88ee-0f9dd8c47d05.png"
       }
     ],
-    githubUrl: "https://github.com",
-    webUrl: "https://example.com"
+    githubUrl: "https://github.com/rizasaputra29/school-finance",
+    webUrl: "https://school-finance-mu.vercel.app/"
   },
   {
-    category: "Healthcare",
-    title: "Medical Record System",
-    src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
-    tags: ["HIPAA", "Cloud", "Data"],
-    overview: "Secure patient data management system ensuring HIPAA compliance and ease of use. Trusted by healthcare providers to manage sensitive medical information.",
+    category: "Fintech",
+    title: "CashMap",
+    src: "https://res.cloudinary.com/imagehandlers/image/upload/v1769625362/e4708246-94bb-47cc-bee3-c596b6b6f314.png",
+    tags: ["Next.js 16", "PWA", "Prisma", "PostgreSQL"],
+    overview: "A progressive web app (PWA) designed for personal finance mastery. Features a dynamic 'Safe-to-Spend' algorithm that adjusts daily budget limits in real-time based on spending habits.",
     details: [
       {
-        title: "Patient Records",
-        description: "Centralized patient records with complete medical history, prescriptions, and test results. Doctors can access records securely from any device.",
-        image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2031&auto=format&fit=crop"
+        title: "Dynamic Budgeting Engine",
+        description: "Core logic calculates a daily spending limit that adapts automatically. If you overspend today, tomorrow's limit adjusts down to keep you on track for the month.",
+        image: "https://res.cloudinary.com/imagehandlers/image/upload/v1769625384/6d293e31-93c4-4410-bae5-75a0e8a17caf.png"
       },
       {
-        title: "HIPAA Compliance",
-        description: "Built with security-first architecture including data encryption, access controls, and comprehensive audit logs to meet all HIPAA requirements.",
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop"
+        title: "Native-Like PWA",
+        description: "Built as a fully installable Progressive Web App for iOS and Android. Provides an app-like experience with offline capabilities, smooth gestures, and biometric-ready security.",
+        image: "https://res.cloudinary.com/imagehandlers/image/upload/v1769625412/d83a5941-0583-447d-b6b6-73b37ed6d971.png"
       }
     ],
-    githubUrl: "https://github.com",
-    webUrl: "https://example.com"
-  },
-  {
-    category: "Marketing",
-    title: "Social Media Automation",
-    src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
-    tags: ["Automation", "API", "Bot"],
-    overview: "Automated content scheduling and engagement tracking for social media growth. Helping creators and brands maintain consistent online presence.",
-    details: [
-      {
-        title: "Smart Scheduling",
-        description: "AI-powered scheduling that analyzes your audience engagement patterns and suggests optimal posting times for maximum reach and interaction.",
-        image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f1c9f6?q=80&w=2074&auto=format&fit=crop"
-      },
-      {
-        title: "Engagement Analytics",
-        description: "Track follower growth, engagement rates, and content performance across all platforms. Get insights to refine your content strategy.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-      }
-    ],
-    githubUrl: "https://github.com",
-    webUrl: "https://example.com"
-  },
-  {
-    category: "Consumer",
-    title: "Travel Booking Platform",
-    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop",
-    tags: ["Booking", "Maps", "Payment"],
-    overview: "Seamless travel booking experience integrating flights, hotels, and local experiences. Making travel planning effortless and enjoyable.",
-    details: [
-      {
-        title: "Unified Search",
-        description: "Search and compare flights, hotels, and car rentals from hundreds of providers in one place. Smart filters help find the perfect option.",
-        image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2035&auto=format&fit=crop"
-      },
-      {
-        title: "Local Experiences",
-        description: "Discover and book unique local experiences, tours, and activities. Curated recommendations based on your interests and travel style.",
-        image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop"
-      }
-    ],
-    githubUrl: "https://github.com",
-    webUrl: "https://example.com"
-  },
-  {
-    category: "AI Tool",
-    title: "AI Content Generator",
-    src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
-    tags: ["LLM", "Python", "FastAPI"],
-    overview: "Generative AI tool for creating marketing copy and blog content in seconds. Powered by state-of-the-art language models for high-quality output.",
-    details: [
-      {
-        title: "Content Generation",
-        description: "Generate blog posts, social media captions, email newsletters, and ad copy with just a few prompts. Supports multiple tones and styles.",
-        image: "https://images.unsplash.com/photo-1655720828018-edd2daec9349?q=80&w=2080&auto=format&fit=crop"
-      },
-      {
-        title: "SEO Optimization",
-        description: "Built-in SEO analysis and keyword suggestions to ensure your content ranks well. Integrates with popular SEO tools for comprehensive optimization.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-      }
-    ],
-    githubUrl: "https://github.com",
-    webUrl: "https://example.com"
+    githubUrl: "https://github.com/rizasaputra29/cashmap",
+    webUrl: "https://cash-map.vercel.app/"
   }
 ];

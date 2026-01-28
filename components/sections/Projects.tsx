@@ -20,16 +20,18 @@ interface ProjectContentProps {
   tags: string[];
   overview: string;
   details: DetailSection[];
+  thumbnailSrc: string;
+  title: string;
   githubUrl?: string;
   webUrl?: string;
 }
 
-export const ProjectContent = React.memo(({ tags, overview, details, githubUrl, webUrl }: ProjectContentProps) => {
+export const ProjectContent = React.memo(({ tags, overview, details, thumbnailSrc, title, githubUrl, webUrl }: ProjectContentProps) => {
   return (
     <>
       {/* Overview Section */}
       <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+        <p className="text-neutral-600 text-center dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
           <span className="font-bold text-neutral-700 dark:text-neutral-200">
             {overview}
           </span>
@@ -67,6 +69,14 @@ export const ProjectContent = React.memo(({ tags, overview, details, githubUrl, 
             )}
           </div>
         )}
+        <Image
+          src={thumbnailSrc}
+          alt={title}
+          height={520}
+          width={830}
+          loading="lazy"
+          className="w-full max-w-3xl mx-auto object-cover mt-8 rounded-xl aspect-8/5"
+        />
       </div>
 
       {/* Detail Sections */}
@@ -84,10 +94,10 @@ export const ProjectContent = React.memo(({ tags, overview, details, githubUrl, 
           <Image
             src={detail.image}
             alt={detail.title}
-            height={500}
-            width={500}
+            height={520}
+            width={830}
             loading="lazy"
-            className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain mt-8 rounded-xl"
+            className="w-full max-w-3xl mx-auto object-cover mt-8 rounded-xl aspect-8/5"
           />
         </div>
       ))}
@@ -98,7 +108,6 @@ export const ProjectContent = React.memo(({ tags, overview, details, githubUrl, 
 ProjectContent.displayName = "ProjectContent";
 
 export function Projects() {
-  // Transform data to include JSX content
   const cards = projectsData.map((project) => ({
     category: project.category,
     title: project.title,
@@ -108,6 +117,8 @@ export function Projects() {
         tags={project.tags}
         overview={project.overview}
         details={project.details}
+        thumbnailSrc={project.src}
+        title={project.title}
         githubUrl={project.githubUrl}
         webUrl={project.webUrl}
       />
