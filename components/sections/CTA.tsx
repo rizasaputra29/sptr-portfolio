@@ -18,7 +18,7 @@ export function CTA() {
             Let&apos;s Build <br /> Something Together
           </h2>
           <Link
-            href="mailto:hello@riza.dev"
+            href="mailto:rizasaputra177@gmail.com"
             className="group relative inline-flex items-center gap-4 px-12 py-6 rounded-full border-2 border-white/20 hover:bg-white hover:border-white transition-all duration-300"
           >
             <span className="text-xl font-medium group-hover:text-black tracking-wide">

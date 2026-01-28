@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,6 +13,7 @@ export function Hero() {
   const topContentRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtextRef = useRef<HTMLDivElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     if (!containerRef.current || !topContentRef.current) return;
@@ -48,20 +49,38 @@ export function Hero() {
       });
     });
 
-    // Entry animations
+    // Create a smooth entry timeline
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    // Headline animation - stagger each line
     if (headlineRef.current) {
-      gsap.fromTo(headlineRef.current, 
-        { opacity: 0, y: 60 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.2 }
+      const lines = headlineRef.current.querySelectorAll("span");
+      tl.fromTo(lines, 
+        { opacity: 0, y: 80, skewY: 3 },
+        { opacity: 1, y: 0, skewY: 0, duration: 1.2, stagger: 0.15 },
+        0
       );
     }
 
+    // Subtext grid items - stagger each item
     if (subtextRef.current) {
-      gsap.fromTo(subtextRef.current,
+      const items = subtextRef.current.querySelectorAll(":scope > div");
+      tl.fromTo(items,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", delay: 0.5 }
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 },
+        0.4
       );
     }
+
+    // Hero image - scale and fade in
+    if (imageContainerRef.current) {
+      tl.fromTo(imageContainerRef.current,
+        { opacity: 0, scale: 1.1 },
+        { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" },
+        0.2
+      );
+    }
+
   }, { scope: containerRef });
 
   return (
@@ -118,14 +137,16 @@ export function Hero() {
       </div>
 
       {/* Hero Image (Fixed Bottom) */}
-      <div className="absolute bottom-0 left-0 w-full h-[40vh] sm:h-[45vh] z-10 overflow-hidden">
+      <div 
+        ref={imageContainerRef}
+        className="absolute bottom-0 left-0 w-full h-[40vh] sm:h-[45vh] z-10 overflow-hidden"
+      >
         <Image 
-          src="https://res.cloudinary.com/imagehandlers/image/upload/v1769581384/IMG_1721_brwalr.jpg" 
-          alt="Hero Background" 
+          src="https://images.unsplash.com/photo-1621165706491-70e8be5e8080?q=80&w=3134&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          alt="Modern workspace with laptop displaying code on a clean desk" 
           fill 
           sizes="100vw"
           quality={100}
-          unoptimized
           className="object-cover"
           priority
         />

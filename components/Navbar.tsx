@@ -1,13 +1,12 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import StaggeredMenu, { StaggeredMenuHandle } from "./StaggeredMenu";
+import { MobileMenu } from "./MobileMenu";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function Navbar() {
-	const menuRef = useRef<StaggeredMenuHandle>(null);
-	const [isOpen, setIsOpen] = useState(false);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [activeSection, setActiveSection] = useState("");
 	const [isScrolled, setIsScrolled] = useState(false);
 
@@ -20,7 +19,11 @@ export function Navbar() {
 	];
 
 	const handleToggle = () => {
-		menuRef.current?.toggle();
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	};
+
+	const handleCloseMobileMenu = () => {
+		setIsMobileMenuOpen(false);
 	};
 
 	useEffect(() => {
@@ -206,24 +209,11 @@ export function Navbar() {
                 )}
             </AnimatePresence>
 
-			<StaggeredMenu
-				ref={menuRef}
-				headless={true}
-				items={menuItems}
-				socialItems={[
-					{ label: "Instagram", link: "https://instagram.com/cerc_undip" },
-					{ label: "LinkedIn", link: "https://linkedin.com/company/cerc-undip" },
-					{ label: "GitHub", link: "https://github.com/cerc-undip" },
-				]}
-				isFixed={true}
-				displaySocials={true}
-				displayItemNumbering={true}
-				colors={["#111", "#111", "#111"]}
-				accentColor="#fff"
-				menuButtonColor="#000"
-				onMenuOpen={() => setIsOpen(true)}
-				onMenuClose={() => setIsOpen(false)}
-				className="font-sans"
+			{/* Mobile Menu */}
+			<MobileMenu 
+				isOpen={isMobileMenuOpen}
+				onClose={handleCloseMobileMenu}
+				menuItems={menuItems}
 			/>
 		</>
 	);

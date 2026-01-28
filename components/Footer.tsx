@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white pt-10 pb-10">
+    <footer className="bg-black text-white pt-8 pb-8">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -23,7 +23,6 @@ export function Footer() {
             <h3 className="font-medium text-lg mb-6">Navigation</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li><Link href="#about" className="hover:text-white transition-colors">About</Link></li>
-              <li><Link href="#skills" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link href="#experience" className="hover:text-white transition-colors">Experience</Link></li>
               <li><Link href="#projects" className="hover:text-white transition-colors">Projects</Link></li>
             </ul>
@@ -43,7 +42,7 @@ export function Footer() {
           <div>
             <h3 className="font-medium text-lg mb-6">Contact</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="mailto:hello@riza.dev" className="hover:text-white transition-colors">hello@riza.dev</a></li>
+              <li><a href="mailto:rizasaputra177@gmail.com" className="hover:text-white transition-colors">rizasaputra177@gmail.com</a></li>
               <li>Semarang, Indonesia</li>
             </ul>
           </div>
@@ -55,10 +54,10 @@ export function Footer() {
             © {new Date().getFullYear()} Riza Saputra. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Github size={20} /></a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Twitter size={20} /></a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Mail size={20} /></a>
+            <a href="https://github.com/rizasaputra29" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="GitHub"><Github size={20} /></a>
+            <a href="https://www.linkedin.com/in/rizasaputra29" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin size={20} /></a>
+            <a href="https://instagram.com/rizasaputra29" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><Instagram size={20} /></a>
+            <a href="mailto:rizasaputra177@gmail.com" className="text-gray-400 hover:text-white transition-colors" aria-label="Email"><Mail size={20} /></a>
           </div>
         </div>
       </div>

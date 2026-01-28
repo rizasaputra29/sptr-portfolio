@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-
-const experience = [
-  { role: "Co-Founder", company: "Clean n Shine", period: "2022 - 2025" },
-  { role: "Full Stack Engineer Intern", company: "Reswara Praptama", period: "2025" },
-  { role: "IT Support", company: "Al Madeena Islamic School", period: "2025 - Present" },
-];
+import { experienceData } from "@/data";
 
 export function Experience() {
   return (
@@ -21,7 +15,7 @@ export function Experience() {
         </div>
        
         <div className="flex flex-col">
-            {experience.map((item, idx) => (
+            {experienceData.map((item, idx) => (
                 <motion.div 
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}

@@ -14,7 +14,7 @@ export function Quote() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 leading-tight mb-8">
-              “Without commitment, you'll never start. But more importantly, without consistency, you'll never finish.”
+              &ldquo;Without commitment, you&apos;ll never start. But more importantly, without consistency, you&apos;ll never finish.&rdquo;
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
               - Denzel Washington, 2017

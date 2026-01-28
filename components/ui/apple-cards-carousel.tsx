@@ -35,20 +35,20 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const [canScrollRight, setCanScrollRight] = React.useState(true)
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = initialScroll
-      checkScrollability()
-    }
-  }, [initialScroll])
-
-  const checkScrollability = () => {
+  const checkScrollability = React.useCallback(() => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
       setCanScrollLeft(scrollLeft > 0)
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth)
     }
-  }
+  }, [])
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = initialScroll
+      checkScrollability()
+    }
+  }, [initialScroll, checkScrollability])
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -154,8 +154,17 @@ export interface CardProps {
 export const Card = ({ card, index, layout = false }: CardProps) => {
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const { onCardClose, currentIndex: _currentIndex } = useContext(CarouselContext)
+  const { onCardClose } = useContext(CarouselContext)
   const lenis = useLenis()
+
+  const handleClose = React.useCallback(() => {
+    setOpen(false)
+    onCardClose(index)
+  }, [onCardClose, index])
+
+  const handleOpen = () => {
+    setOpen(true)
+  }
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -166,26 +175,17 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
 
     if (open) {
       document.body.style.overflow = "hidden"
-      lenis?.stop() // Stop Lenis smooth scrolling when modal is open
+      lenis?.stop()
     } else {
       document.body.style.overflow = "auto"
-      lenis?.start() // Resume Lenis smooth scrolling when modal is closed
+      lenis?.start()
     }
 
     window.addEventListener("keydown", onKeyDown)
     return () => window.removeEventListener("keydown", onKeyDown)
-  }, [open, lenis])
+  }, [open, lenis, handleClose])
 
   useOnClickOutside(containerRef as React.RefObject<HTMLElement>, () => handleClose())
-
-  const handleOpen = () => {
-    setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-    onCardClose(index)
-  }
 
   return (
     <>
@@ -279,11 +279,10 @@ export const BlurImage = ({
   src,
   className,
   alt,
-  fill,
-  ...rest
 }: BlurImageProps) => {
   const [isLoading, setLoading] = useState(true)
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       alt={alt ? alt : "Background of a beautiful view"}
       className={cn(
@@ -297,7 +296,6 @@ export const BlurImage = ({
       onLoad={() => setLoading(false)}
       src={src}
       width={width}
-      {...rest}
     />
   )
 }
