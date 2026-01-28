@@ -192,7 +192,7 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
       <AnimatePresence>
         {open && (
           <div 
-            className="fixed inset-0 z-50 h-[100dvh] overflow-y-auto overflow-x-hidden overscroll-contain touch-pan-y"
+            className="fixed inset-0 z-50 h-dvh overflow-y-auto overflow-x-hidden overscroll-contain touch-pan-y"
             onWheel={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
           >

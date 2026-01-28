@@ -27,6 +27,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Riza Saputra | Software Engineer",
   description: "Software Engineer based in Semarang, specializing in scalable web systems.",
+  metadataBase: new URL("https://rizasaputra.my.id"),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -41,11 +42,20 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Riza Saputra Portfolio",
+    images: [
+      {
+        url: "/apple-touch-icon.png",
+        width: 180,
+        height: 180,
+        alt: "Riza Saputra - Software Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Riza Saputra | Software Engineer",
     description: "Software Engineer based in Semarang, specializing in scalable web systems.",
+    images: ["/apple-touch-icon.png"],
   },
 };
 
