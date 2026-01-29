@@ -23,7 +23,7 @@ export function Hero() {
     
     mm.add("(max-width: 640px)", () => {
       gsap.to(topContentRef.current, {
-        y: "36vh",
+        y: "45vh",
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -98,15 +98,15 @@ export function Hero() {
       {/* Top Content (Animated Mask) */}
       <div 
         ref={topContentRef}
-        className="absolute top-0 left-0 w-full h-[65vh] sm:h-[55vh] z-20 bg-white flex flex-col justify-end pb-3 sm:pb-6 md:pb-10"
+        className="absolute top-0 left-0 w-full h-[55vh] sm:h-[50vh] md:h-[55vh] z-20 bg-white flex flex-col justify-end py-8 md:py-12 lg:py-6"
       >
-        <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24">
+        <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-20">
           {/* Massive Editorial Headline */}
           <h1 
             ref={headlineRef}
             className="font-bold text-[#0a0a0a] uppercase tracking-[-0.04em] leading-[0.82] mb-4 sm:mb-6 md:mb-10"
             style={{
-              fontSize: "clamp(2rem, 10vw, 8rem)",
+              fontSize: "clamp(3.5rem, 18vw, 8rem)",
             }}
           >
             <span className="block">Saputra</span>
@@ -139,10 +139,10 @@ export function Hero() {
       {/* Hero Image (Fixed Bottom) */}
       <div 
         ref={imageContainerRef}
-        className="absolute bottom-0 left-0 w-full h-[40vh] sm:h-[45vh] z-10 overflow-hidden"
+        className="absolute bottom-0 left-0 w-full h-[45vh] sm:h-[50vh] md:h-[45vh] z-10 overflow-hidden"
       >
         <Image 
-          src="https://res.cloudinary.com/imagehandlers/image/upload/v1769643275/charlie-dt-lVH3nplcE50-unsplash_aqv6vo.jpg" 
+          src="https://res.cloudinary.com/imagehandlers/image/upload/v1769692297/b_w_hero_thxn5n.jpg" 
           alt="Modern Software Engineer Black & White" 
           fill 
           sizes="100vw"
